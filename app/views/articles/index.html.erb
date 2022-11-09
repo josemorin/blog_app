@@ -1,11 +1,27 @@
-<h1>Articles</h1>
+<div class="row">
+  <div class="col-12 text-center">
+    <h1>Articles</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+  	<%= link_to "New Article", new_article_path, class: 'btn btn-primary'%>
+  </div>
+</div>
+<br>
 
-<ul>
-  <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article %>
-    </li>
-  <% end %>
-</ul>
+<% @articles.each do |article| %>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= article.title %></h5>
+          <%= link_to 'Ver mas...', article, class: 'btn btn-link'%>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+<% end %>
 
-<%= link_to "New Article", new_article_path %>
+
