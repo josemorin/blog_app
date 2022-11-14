@@ -3,6 +3,8 @@
     <h1>Articles</h1>
   </div>
 </div>
+Our blog has <%= Article.public_count %> articles and counting!
+
 <div class="row">
   <div class="col-12">
   	<%= link_to "New Article", new_article_path, class: 'btn btn-primary'%>
@@ -11,17 +13,19 @@
 <br>
 
 <% @articles.each do |article| %>
-  <div class="row">
-    <div class="col-12">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><%= article.title %></h5>
-          <%= link_to 'Ver mas...', article, class: 'btn btn-link'%>
+  <% unless article.archived? %>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= article.title %></h5>
+            <%= link_to 'Ver mas...', article, class: 'btn btn-link'%>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <br>
+    <br>
+  <% end %>
 <% end %>
 
 

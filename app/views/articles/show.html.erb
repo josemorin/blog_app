@@ -11,17 +11,6 @@
     <p><%= @article.body %></p>
   </div>
 </div>
-<div class="row">
-  <div class="col-12">
-    <%= link_to "Main", articles_path, class: 'btn btn-link' %>
-    <%= link_to "Edit", edit_article_path(@article), class: 'btn btn-secondary' %>
-    <%= link_to "Destroy", article_path(@article), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  }, class: 'btn btn-danger' %>
-  </div>
-</div>
-
 <br>
 <div class="row">
   <div class="col-12">
@@ -33,5 +22,16 @@
   <div class="col-12">
     <h2>Add comment:</h2>
     <%= render 'comments/form' %>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-12">
+    <%= link_to "Main", articles_path, class: 'btn btn-link' %>
+    <%= link_to "Edit", edit_article_path(@article), class: 'btn btn-secondary' %>
+    <%= link_to "Destroy", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  }, class: 'btn btn-danger' %>
   </div>
 </div>
